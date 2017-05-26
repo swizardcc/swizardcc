@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://swizardcc.github.io/"/>
   <updated>2017-05-26T11:06:13.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://swizardcc.github.io/</id>
   
   <author>
     <name>Swizard</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Vim Cheat Sheet</title>
-    <link href="http://yoursite.com/2017/05/24/Vim%20Cheat%20Sheet/"/>
-    <id>http://yoursite.com/2017/05/24/Vim Cheat Sheet/</id>
+    <link href="http://swizardcc.github.io/2017/05/24/Vim%20Cheat%20Sheet/"/>
+    <id>http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/</id>
     <published>2017-05-24T07:05:17.000Z</published>
     <updated>2017-05-26T11:06:13.000Z</updated>
     
