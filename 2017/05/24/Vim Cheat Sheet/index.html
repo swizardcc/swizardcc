@@ -5,16 +5,16 @@
   
   <title>Vim Cheat Sheet | Swizard&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="全局:help keyword - 打开关键字帮助:o file - 打开文件:saveas file - 另存为:close - 关闭当前窗口K - open man page for word under the cursor 光标h - 左移光标j - 下移光标k - 上移光标l - 右移光标H - 移动到当前页面顶部M - 移动到当前页面中间L - 移动到当前页面底部w - 移动到下个单词">
+  <meta name="description" content="全局 :help keyword       打开关键字帮助 :o file             打开文件 :saveas file        另存为 :close              关闭当前窗口 K                   open man page for word under the cursor  光标 h                   左移光标 j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim Cheat Sheet">
 <meta property="og:url" content="http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/index.html">
 <meta property="og:site_name" content="Swizard&#39;s Blog">
-<meta property="og:description" content="全局:help keyword - 打开关键字帮助:o file - 打开文件:saveas file - 另存为:close - 关闭当前窗口K - open man page for word under the cursor 光标h - 左移光标j - 下移光标k - 上移光标l - 右移光标H - 移动到当前页面顶部M - 移动到当前页面中间L - 移动到当前页面底部w - 移动到下个单词">
-<meta property="og:updated_time" content="2017-05-26T11:06:13.000Z">
+<meta property="og:description" content="全局 :help keyword       打开关键字帮助 :o file             打开文件 :saveas file        另存为 :close              关闭当前窗口 K                   open man page for word under the cursor  光标 h                   左移光标 j">
+<meta property="og:updated_time" content="2017-05-31T04:29:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim Cheat Sheet">
-<meta name="twitter:description" content="全局:help keyword - 打开关键字帮助:o file - 打开文件:saveas file - 另存为:close - 关闭当前窗口K - open man page for word under the cursor 光标h - 左移光标j - 下移光标k - 上移光标l - 右移光标H - 移动到当前页面顶部M - 移动到当前页面中间L - 移动到当前页面底部w - 移动到下个单词">
+<meta name="twitter:description" content="全局 :help keyword       打开关键字帮助 :o file             打开文件 :saveas file        另存为 :close              关闭当前窗口 K                   open man page for word under the cursor  光标 h                   左移光标 j">
   
   
   
@@ -99,21 +99,174 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><p><strong>:help keyword - 打开关键字帮助<br>:o file - 打开文件<br>:saveas file - 另存为<br>:close - 关闭当前窗口<br>K - open man page for word under the cursor</strong></p>
-<h3 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h3><p><strong>h - 左移光标<br>j - 下移光标<br>k - 上移光标<br>l - 右移光标<br>H - 移动到当前页面顶部<br>M - 移动到当前页面中间<br>L - 移动到当前页面底部<br>w - 移动到下个单词开头<br>W - 移动到下个单词开头(单词含标点)<br>e - 移动到下个单词结尾<br>E - 移动到下个单词结尾(单词含标点)<br>b - 移动到上个单词结尾<br>B - 移动到上个单词结尾(单词含标点)<br>0 - 移动到行首<br>^ - 移动到行首的非空白符<br>$ - 移动到行尾<br>g_ - 移动到行内最后一个非空白符<br>gg - 移动到文件第一行<br>G - 移动到文件最后一行<br>5G - 移动到第五行<br>fx - 移动到字符 x 下次出现的位置<br>tx - 移动到字符 x 下次出现的位置的前一个字符<br>} - 移动到下一个段落 (当编辑代码时则为函数／代码块)<br>{ - 移动到上一个段落 (当编辑代码时则为函数／代码块)<br>zz - 移动屏幕使光标居中<br>Ctrl + b - 向后滚动一屏<br>Ctrl + f - 向前滚动一屏<br>Ctrl + d - 向前滚动半屏<br>Ctrl + u - 向后滚动半屏</strong></p>
+        <h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><pre>
+:help keyword       打开关键字帮助
+:o file             打开文件
+:saveas file        另存为
+:close              关闭当前窗口
+K                   open man page for word under the cursor</pre>
+
+<h3 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h3><pre>
+h                   左移光标
+j                   下移光标
+k                   上移光标
+l                   右移光标
+H                   移动到当前页面顶部
+M                   移动到当前页面中间
+L                   移动到当前页面底部
+w                   移动到下个单词开头
+W                   移动到下个单词开头(单词含标点)
+e                   移动到下个单词结尾
+E                   移动到下个单词结尾(单词含标点)
+b                   移动到上个单词结尾
+B                   移动到上个单词结尾(单词含标点)
+0                   移动到行首
+^                   移动到行首的非空白符
+$                   移动到行尾
+g_                  移动到行内最后一个非空白符
+gg                  移动到文件第一行
+G                   移动到文件最后一行
+5G                  移动到第五行
+fx                  移动到字符 x 下次出现的位置
+tx                  移动到字符 x 下次出现的位置的前一个字符
+}                   移动到下一个段落 (当编辑代码时则为函数／代码块)
+{                   移动到上一个段落 (当编辑代码时则为函数／代码块)
+zz                  移动屏幕使光标居中
+Ctrl + b            向后滚动一屏
+Ctrl + f            向前滚动一屏
+Ctrl + d            向前滚动半屏
+Ctrl + u            向后滚动半屏</pre>
+
 <p><strong><code>Tips: 命令前追加数字表示命令的重复次数, 比如 4j 表示向下移动四行</code></strong></p>
-<h3 id="插入模式-插入-追加文本"><a href="#插入模式-插入-追加文本" class="headerlink" title="插入模式 - 插入/追加文本"></a>插入模式 - 插入/追加文本</h3><p><strong>i - 从光标前开始插入字符<br>I - 从行首开始插入字符<br>a - 从光标后开始插入字符<br>A - 从行尾开始插入字符<br>o - 在当前行之下另起一行, 开始插入字符<br>O - 在当前行之上另起一行, 开始插入字符<br>ea - 从当前单词末尾开始插入<br>Esc - 退出插入模式</strong></p>
-<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p><strong>r - 替换当前字符<br>J - 将下一行合并到当前行<br>cc - 清空当前行, 然后进入插入模式<br>cw - 从光标位置开始, 修改单词<br>c$ - 从光标位置开始, 修改当前行<br>s - 删除当前字符, 然后进入插入模式<br>S - 清空当前行, 然后进入插入模式 (同cc)<br>xp - 当前字符后移<br>u - 撤销<br>Ctrl + r - 重复<br>. - 再次执行上个命令</strong></p>
-<h3 id="选择文本（可视化模式）"><a href="#选择文本（可视化模式）" class="headerlink" title="选择文本（可视化模式）"></a>选择文本（可视化模式）</h3><p><strong>v - 进入可视化模式, 移动光标高亮选择, 然后可以对选择的文本执行命令(比如y-复制)<br>V - 进入可视化模式(行粒度选择)<br>o - 切换光标到选择区开头/结尾<br>Ctrl + v - 进入可视化模式(矩阵选择)<br>O - 切换光标到选择区的角<br>aw - 选择当前单词<br>ab - 选择被 () 包裹的区域(含括号)<br>aB - 选择被 {} 包裹的区域(含花括号)<br>ib - 选择被 () 包裹的区域(不含括号)<br>iB - 选择被 {} 包裹的区域(不含花括号)<br>Esc - 退出可视化模式</strong></p>
-<h3 id="可视化模式命令"><a href="#可视化模式命令" class="headerlink" title="可视化模式命令"></a>可视化模式命令</h3><p><strong><em>&gt; - 向右缩进</em><br>&lt; - 向左缩进<br>y - 复制<br>d - 剪切<br>~ - 大小写切换</strong></p>
-<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p><strong>:reg - 显示寄存器内容<br>“xy - 复制内容到寄存器 x<br>“xp - 粘贴寄存器 x 中的内容<br>Tip 寄存器被存储在 ~/.viminfo 中, 在下次重启vim时仍会加载<br>Tip 寄存器 0 存储上一次复制的值</strong></p>
-<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p><strong>:marks - 标记列表<br>ma - 设置当前位置为标记 a<br>`a - 跳转到标记 a 的位置<br>y`a - 复制当前位置到标记 a 的内容</strong></p>
-<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p><strong>qa - 录制宏 a<br>q - 停止录制宏<br>@a - 执行宏 a<br>@@ - 重新执行上次执行的宏<br>剪切, 复制, 粘贴<br>yy - 复制当前行<br>2yy - 复制 2 行<br>yw - 复制当前单词<br>y$ - 复制, 从光标位置到行末<br>p - 在光标后粘贴<br>P - 在光标前粘贴<br>dd - 剪切当前行<br>2dd - 剪切 2 行<br>dw - 剪切当前单词<br>D - 剪切, 从光标位置到行末<br>d$ - 剪切, 从光标位置到行末 (同D)<br>x - 剪切当前字符</strong></p>
-<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p><strong>:w - 保存<br>:w !sudo tee % - 使用 sudo 保存当前文件<br>:wq or :x or ZZ - 保存并退出<br>:q - 退出(修改未保存时警告)<br>:q! or ZQ - 不保存强制退出</strong></p>
-<h3 id="查找-替换"><a href="#查找-替换" class="headerlink" title="查找/替换"></a>查找/替换</h3><p><strong>/pattern - 查找pattern<br>?pattern - 向上查找pattern<br>\vpattern - pattern 中的非字母数字字符被视为正则表达式特殊字符 (不需转义字符)<br>n - 查找下一个<br>N - 查找上一个<br>:%s/old/new/g - 替换全部<br>:%s/old/new/gc - (逐个)替换<br>:noh - 移除搜索结果的高亮显示</strong></p>
-<h3 id="多文件搜索"><a href="#多文件搜索" class="headerlink" title="多文件搜索"></a>多文件搜索</h3><p><strong>:vimgrep /pattern/ {file} - 在多个文件中搜索 pattern<br>e.g. :vimgrep /foo/ **/*<br>:cn - 移动至下一个<br>:cp - 移动至上一个<br>:copen - 打开搜索结果列表</strong></p>
-<h3 id="多文件"><a href="#多文件" class="headerlink" title="多文件"></a>多文件</h3><p><strong>:e file - 新建缓冲区打开 filename<br>:bnext or :bn - 切换到下个缓冲区<br>:bprev or :bp - 切换到上个缓冲区<br>:bd - 关闭缓冲区<br>:ls - 列出所有打开的缓冲区<br>:sp file - 新建缓冲区打开 filename 并水平分割窗口<br>:vsp file - 新缓冲区打开 filename 并垂直分割窗口<br>Ctrl + ws - 水平分割窗口<br>Ctrl + ww - 在窗口间切换<br>Ctrl + wq - 关闭窗口<br>Ctrl + wv - 垂直分割窗口<br>Ctrl + wh - 切换到右侧窗口<br>Ctrl + wl - 切换到左侧窗口<br>Ctrl + wj - 切换到下侧窗口<br>Ctrl + wk - 切换到上侧窗口</strong></p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p><strong>:tabnew or :tabnew file - 在新标签中打开文件<br>Ctrl + wT - 将窗口变成标签<br>gt or :tabnext or :tabn - 切换到下一个标签<br>gT or :tabprev or :tabp - 切换到上一个标签<br>#gt - 切换到第 # 个标签<br>:tabmove # - 移动标签到第 # 位(下标从 0 开始)<br>:tabclose or :tabc - 关闭当前标签<br>:tabonly or :tabo - 关闭其他标签<br>:tabdo command - 在所有标签中执行命令 (例如 :tabdo q 关闭所有标签)</strong></p>
+<h3 id="插入模式-插入-追加文本"><a href="#插入模式-插入-追加文本" class="headerlink" title="插入模式 - 插入/追加文本"></a>插入模式 - 插入/追加文本</h3><pre>
+i             从光标前开始插入字符
+I             从行首开始插入字符
+a             从光标后开始插入字符
+A             从行尾开始插入字符
+o             在当前行之下另起一行, 开始插入字符
+O             在当前行之上另起一行, 开始插入字符
+ea            从当前单词末尾开始插入
+Esc           退出插入模式</pre>
+
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><pre>
+r             替换当前字符
+J             将下一行合并到当前行
+cc            清空当前行, 然后进入插入模式
+cw            从光标位置开始, 修改单词
+c$            从光标位置开始, 修改当前行
+s             删除当前字符, 然后进入插入模式
+S             清空当前行, 然后进入插入模式 (同cc)
+xp            当前字符后移
+u             撤销
+Ctrl + r      重复
+.             再次执行上个命令</pre>
+
+<h3 id="选择文本（可视化模式）"><a href="#选择文本（可视化模式）" class="headerlink" title="选择文本（可视化模式）"></a>选择文本（可视化模式）</h3><pre>
+v               进入可视化模式, 移动光标高亮选择, 然后可以对选择的文本执行命令(比如        制)
+V               进入可视化模式(行粒度选择)
+o               切换光标到选择区开头/结尾
+Ctrl + v        进入可视化模式(矩阵选择)
+O               切换光标到选择区的角
+aw              选择当前单词
+ab              选择被 () 包裹的区域(含括号)
+aB              选择被 {} 包裹的区域(含花括号)
+ib              选择被 () 包裹的区域(不含括号)
+iB              选择被 {} 包裹的区域(不含花括号)
+Esc             退出可视化模式</pre>
+
+<h3 id="可视化模式命令"><a href="#可视化模式命令" class="headerlink" title="可视化模式命令"></a>可视化模式命令</h3><pre>
+_>          向右缩进_
+<           向左缩进
+y           复制
+d           剪切
+~           大小写切换</pre>
+
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><pre>
+:reg         显示寄存器内容
+"xy          复制内容到寄存器 x
+"xp          粘贴寄存器 x 中的内容</pre>
+
+<p><strong><code>Tip 寄存器被存储在 ~/.viminfo 中, 在下次重启vim时仍会加载</code></strong><br><strong><code>Tip 寄存器 0 存储上一次复制的值</code></strong></p>
+<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><pre>
+:marks            标记列表
+ma                设置当前位置为标记 a
+\`a               跳转到标记 a 的位置
+y`a               复制当前位置到标记 a 的内容</pre>
+
+<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><pre>
+qa                  录制宏 a
+q                   停止录制宏
+@a                  执行宏 a
+@@                  重新执行上次执行的宏剪切, 复制, 粘贴
+yy                  复制当前行
+2yy                 复制 2 行
+yw                  复制当前单词
+y$                  复制, 从光标位置到行末
+p                   在光标后粘贴
+P                   在光标前粘贴
+dd                  剪切当前行
+2dd                 剪切 2 行
+dw                  剪切当前单词
+D                   剪切, 从光标位置到行末
+d$                  剪切, 从光标位置到行末 (同D)
+x                   剪切当前字符</pre>
+
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><pre>
+:w                            保存
+:w !sudo tee %                使用 sudo 保存当前文件
+:wq or :x or ZZ               保存并退出
+:q                            退出(修改未保存时警告)
+:q! or ZQ                     不保存强制退出</pre>
+
+<h3 id="查找-替换"><a href="#查找-替换" class="headerlink" title="查找/替换"></a>查找/替换</h3><pre>
+/pattern                      查找pattern
+?pattern                      向上查找pattern
+\vpattern                     pattern 中的非字母数字字符被视为正则表达式特殊字符 (不需转义字符)
+n                             查找下一个
+N                             查找上一个
+:%s/old/new/g                 替换全部
+:%s/old/new/gc                (逐个)替换
+:noh                          移除搜索结果的高亮显示</pre>
+
+<h3 id="多文件搜索"><a href="#多文件搜索" class="headerlink" title="多文件搜索"></a>多文件搜索</h3><pre>
+:vimgrep /pattern/ {file}             在多个文件中搜索 pattern
+                                      e.g. :vimgrep /foo/ \*\*/*
+:cn                                   移动至下一个
+:cp                                   移动至上一个
+:copen                                打开搜索结果列表</pre>
+
+<h3 id="多文件"><a href="#多文件" class="headerlink" title="多文件"></a>多文件</h3><pre>
+:e file                   新建缓冲区打开 filename
+:bnext or :bn             切换到下个缓冲区
+:bprev or :bp             切换到上个缓冲区
+:bd                       关闭缓冲区
+:ls                       列出所有打开的缓冲区
+:sp file                  新建缓冲区打开 filename 并水平分割窗口
+:vsp file                 新缓冲区打开 filename 并垂直分割窗口
+Ctrl + ws                 水平分割窗口
+Ctrl + ww                 在窗口间切换
+Ctrl + wq                 关闭窗口
+Ctrl + wv                 垂直分割窗口
+Ctrl + wh                 切换到右侧窗口
+Ctrl + wl                 切换到左侧窗口
+Ctrl + wj                 切换到下侧窗口
+Ctrl + wk                 切换到上侧窗口</pre>
+
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><pre>
+:tabnew or :tabnew file            在新标签中打开文件
+Ctrl + wT                          将窗口变成标签
+gt or :tabnext or :tabn            切换到下一个标签
+gT or :tabprev or :tabp            切换到上一个标签
+\#gt                               切换到第 # 个标签
+:tabmove #                         移动标签到第 # 位(下标从 0 开始)
+:tabclose or :tabc                 关闭当前标签
+:tabonly or :tabo                  关闭其他标签
+:tabdo command                     在所有标签中执行命令 (例如 :tabdo q 关闭所有标签)</pre>
+
+
+<blockquote>
+<p>from : <a href="https://vim.rtorr.com/" target="_blank" rel="external">https://vim.rtorr.com/</a></p>
+</blockquote>
 
       
     </div>
@@ -124,7 +277,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/" data-id="cj35s9g4t0000hu8pro1a8sz7" class="article-share-link">
+      <a data-url="http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/" data-id="cj3cht31t00003s8p43nzdew4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
