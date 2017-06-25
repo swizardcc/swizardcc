@@ -71,13 +71,13 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="post-Bezier曲线" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Bezier" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/Bezier曲线/">Bezier曲线</a>
+      <a class="article-title" href="/2017/06/13/Bezier/">Bezier</a>
     </h1>
   
 
@@ -86,7 +86,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/06/09/Bezier曲线/" class="article-date"><time datetime="2017-06-09T02:30:37.000Z" itemprop="datePublished">2017-06-09</time></a>
+  <a href="/2017/06/13/Bezier/" class="article-date"><time datetime="2017-06-13T12:48:28.000Z" itemprop="datePublished">2017-06-13</time></a>
 </div>
 
     
@@ -97,7 +97,24 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="BezierImgs/linear.svg" alt=""></p>
+        <h1 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h1><h4 id="贝塞尔曲线推导过程"><a href="#贝塞尔曲线推导过程" class="headerlink" title="贝塞尔曲线推导过程"></a>贝塞尔曲线推导过程</h4><ul>
+<li><p>直线上两点a, b之间插值。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">Lerp</span>(<span class="params"><span class="keyword">float</span> a, <span class="keyword">float</span> b, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> (<span class="number">1</span>f - t) * a + t * b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>同样空间坐标系中a(x1, y1, z1), b(x2, y2, z2)插值, 等同于Unity中Vector3.Lerp(a, b, t)。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Vector3 <span class="title">Lerp</span>(<span class="params">Vector3 a, Vector3 b, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> (<span class="number">1</span>f - t) * a + t * b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>现在增加到三个点a, b, c, 首先分别求出a, b的插值结果e和b, c 的插值结果f，最后对e,f插值</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Vector3 <span class="title">Quadratic</span>(<span class="params">Vector3 a, Vector3, b Vector3 c, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> d  = Lerp(a, b, t);</div><div class="line">  <span class="keyword">var</span> e = Lerp(b, c, t);</div><div class="line">  <span class="keyword">return</span> Lerp(d, e, t);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对上面过程进行化简得到二次曲线的公式:<br><em>B(t) = (1-t)²A + 2t(1-t)B + t²C<br>&emsp;&emsp;= t²(A - 2B + C) + t(-2A + 2B) + A</em></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Vector3 <span class="title">Quadratic</span>(<span class="params">Vector3 a, Vector3, b Vector3 c, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> t * t * (a - <span class="number">2</span>f*b + c) + t * ( <span class="number">-2</span>f*a + <span class="number">2</span>f*b) + a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>同样扩展到2次贝塞尔。<br><em>B(t) = (1-t)³A + 3t(1-t)²B + 3t²(1-t)C + t³D<br>&emsp;&emsp;= t³(-A + 3B - 3C + D) + t²(3A - 6B + 3C) + t(-3A + 3B) + A</em></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Vector3 <span class="title">Cubic</span>(<span class="params">Vector3 a, Vector3, b Vector3 c, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> t * t * t * (-a + <span class="number">3</span>f*b - <span class="number">3</span>f*c + d) + t * t * (<span class="number">3</span>f*a - <span class="number">6</span>f*b + <span class="number">3</span>f*c) + t * (<span class="number">-3</span>f*a + <span class="number">3</span>f*b) + a;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>  <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="external">https://en.wikipedia.org/wiki/B%C3%A9zier_curve</a><br>  <a href="https://denisrizov.com/2016/06/02/bezier-curves-unity-package-included/" target="_blank" rel="external">https://denisrizov.com/2016/06/02/bezier-curves-unity-package-included/</a></p>
 
       
     </div>
@@ -108,7 +125,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://swizardcc.github.io/2017/06/09/Bezier曲线/" data-id="cj3vjzdpd0000tf8ptfzky3if" class="article-share-link">
+      <a data-url="http://swizardcc.github.io/2017/06/13/Bezier/" data-id="cj4d1wkbx0000ajd6rpf3o3qa" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -326,7 +343,7 @@ gT or :tabprev or :tabp            切换到上一个标签
     
 
     <footer class="article-footer">
-      <a data-url="http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/" data-id="cj3vjzdph0001tf8puyhdga3y" class="article-share-link">
+      <a data-url="http://swizardcc.github.io/2017/05/24/Vim Cheat Sheet/" data-id="cj4d1wkc10001ajd6qw0ev6b8" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -375,7 +392,7 @@ gT or :tabprev or :tabp            切换到上一个标签
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2017/06/09/Bezier曲线/">Bezier曲线</a>
+          <a href="/2017/06/13/Bezier/">Bezier</a>
         </li>
       
         <li>
