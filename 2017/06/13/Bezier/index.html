@@ -1,105 +1,98 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
   
-  <title>Bezier | Swizard&#39;s Blog</title>
+  <title>Bezier</title>
+  <meta name="author" content="Swizard">
+  <meta name="description" content="贝塞尔曲线贝塞尔曲线推导过程
+直线上两点a, b之间插值。
+1234public float Lerp(float a, float b, float t)&amp;#123;return (1f - t) * a + t * b;&amp;#125;
+
+同样空间坐标系中a(x1, y1, z1), b(x2, y">
+  
+  
+  <meta property="og:title" content="Bezier"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="贝塞尔曲线贝塞尔曲线推导过程 直线上两点a, b之间插值。 1234public float Lerp(float a, float b, float t)&amp;#123;return (1f - t) * a + t * b;&amp;#125;  同样空间坐标系中a(x1, y1, z1), b(x2, y2, z2)插值, 等同于Unity中Vector3.Lerp(a, b, t)。 1234publ">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Bezier">
-<meta property="og:url" content="http://swizardcc.github.io/2017/06/13/Bezier/index.html">
-<meta property="og:site_name" content="Swizard&#39;s Blog">
-<meta property="og:description" content="贝塞尔曲线贝塞尔曲线推导过程 直线上两点a, b之间插值。 1234public float Lerp(float a, float b, float t)&amp;#123;return (1f - t) * a + t * b;&amp;#125;  同样空间坐标系中a(x1, y1, z1), b(x2, y2, z2)插值, 等同于Unity中Vector3.Lerp(a, b, t)。 1234publ">
-<meta property="og:updated_time" content="2017-06-25T18:31:28.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bezier">
-<meta name="twitter:description" content="贝塞尔曲线贝塞尔曲线推导过程 直线上两点a, b之间插值。 1234public float Lerp(float a, float b, float t)&amp;#123;return (1f - t) * a + t * b;&amp;#125;  同样空间坐标系中a(x1, y1, z1), b(x2, y2, z2)插值, 等同于Unity中Vector3.Lerp(a, b, t)。 1234publ">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="/css/styles.css">
-  
-
+  <meta property="og:site_name" content="Swizard&#39;s Blog"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Swizard&#39;s Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;五谷是花生红枣眼泪和小米
+      </div>
     </div>
+    <div class="container">
+      
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-menu-navbar">
-      <ul class="nav navbar-nav">
-        
-          <li><a class=""
-                 href="/index.html">Home</a></li>
-        
-          <li><a class=""
-                 href="/archives/">Archives</a></li>
-        
-      </ul>
-
-      <!--
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-      -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container">
-    <div class="blog-header">
-  <h1 class="blog-title">Swizard&#39;s Blog</h1>
+  <article class="standard post">
+    <div class="title">
+      
   
-</div>
-
-    <div class="row">
-        <div class="col-sm-8 blog-main">
-          <article id="post-Bezier" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 class="article-title" itemprop="name">
-      Bezier
+    <h1 class="page-title center">
+        Bezier
     </h1>
   
 
 
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/06/13/Bezier/" class="article-date"><time datetime="2017-06-13T12:48:28.000Z" itemprop="datePublished">2017-06-13</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
+    </div>
+    <div class="meta center">
       
-        <h1 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h1><h4 id="贝塞尔曲线推导过程"><a href="#贝塞尔曲线推导过程" class="headerlink" title="贝塞尔曲线推导过程"></a>贝塞尔曲线推导过程</h4><ul>
+<time datetime="2017-06-13T12:48:28.000Z">
+<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2017-06-13
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/categories/algorithm/">algorithm</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/tags/bezier-curve/">bezier, curve</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h1><h4 id="贝塞尔曲线推导过程"><a href="#贝塞尔曲线推导过程" class="headerlink" title="贝塞尔曲线推导过程"></a>贝塞尔曲线推导过程</h4><ul>
 <li><p>直线上两点a, b之间插值。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">Lerp</span>(<span class="params"><span class="keyword">float</span> a, <span class="keyword">float</span> b, <span class="keyword">float</span> t</span>)</span></div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> (<span class="number">1</span>f - t) * a + t * b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -118,111 +111,63 @@
 </ul>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>  <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="external">https://en.wikipedia.org/wiki/B%C3%A9zier_curve</a><br>  <a href="https://denisrizov.com/2016/06/02/bezier-curves-unity-package-included/" target="_blank" rel="external">https://denisrizov.com/2016/06/02/bezier-curves-unity-package-included/</a></p>
 
-      
-    </div>
 
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://swizardcc.github.io/2017/06/13/Bezier/" data-id="cj4d1yo5l0000f1d603hfce44" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
   </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/2017/05/24/Vim Cheat Sheet/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Vim Cheat Sheet</span>
-    </a>
-  </li>
-  
-  
-</ul>
-
-
-  
-</article>
 
 
 
 
-        </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          
-  <div class="sidebar-module sidebar-module-inset">
-  <h4>About</h4>
-  
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
 </div>
-
-
-  
-
-
-  
-
-
-  
-
-  
-  <div class="sidebar-module">
-    <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">1</span></li></ul>
-  </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Recents</h4>
-    <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2017/06/13/Bezier/">Bezier</a>
-        </li>
-      
-        <li>
-          <a href="/2017/05/24/Vim Cheat Sheet/">Vim Cheat Sheet</a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-
-        </div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © swizard 2017-2018
     </div>
-  </div>
-  <footer class="blog-footer">
-  <div class="container">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Swizard<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
     </div>
-  </div>
+</div>
+<div class="clearfix">
+</div>
 </footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
 
-  
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+// disqus scripts
 
 
-<script src="/js/script.js"></script>
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
 
 </body>
 </html>
